@@ -25,6 +25,7 @@ elif args.password is None:
 
 conn = sqlite.connect(args.db_name)
 cur = conn.cursor()
+cur.execute(f"PRAGMA cipher_default_compatibility = 3")
 cur.execute(f"PRAGMA key='{args.password}'")
 cur.execute("SELECT * FROM accounts ORDER BY position ASC")
 account_rows = cur.fetchall()
