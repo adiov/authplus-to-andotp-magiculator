@@ -39,5 +39,5 @@ Authenticator Plus master password:
 
 ## Caveats
 - This will decrypt the Authenticator Plus backup database and output the andOTP backup database in decrypted plain-text. Be careful how you handle that.
-- The imported entries in andOTP won't have pretty icons by default, but you can set those in andOTP.
+- This attempts to preserve the entries' icons/thumbnails by using the `Issuer` field as `thumbnail`, which doesn't have a 100% success rate, but should work most of the time.
 - As far as I can tell, Authenticator Plus doesn't handle checksum algorithms other than SHA-1 or OTP digits other than 6. The output file will use those values by default.
