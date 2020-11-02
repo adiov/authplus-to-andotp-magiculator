@@ -5,6 +5,7 @@ from argparse import ArgumentParser
 from getpass import getpass
 import sys
 import json
+import base64
 
 ap = ArgumentParser(description="Convert Authenticator Plus OTP backup database into andOTP backup database")
 ap.add_argument("-d", "--database", dest="db_name",
@@ -34,17 +35,11 @@ account_list = []
 
 for account_row in account_rows:
     account_obj = {}
+    # Default values for all account types
     account_obj["secret"] = account_row[3].upper()
     account_obj["label"] = account_row[10]
     account_obj["digits"] = 6
     account_obj["algorithm"] = "SHA1"
-
-    if account_row[5] == 0:
-        account_obj["type"] = "TOTP"
-        account_obj["period"] = 30
-    elif account_row[5] == 1:
-        account_obj["type"] = "HOTP"
-        account_obj["counter"] = account_row[4]
 
     if account_row[9] is None or account_row[9] == "":
         account_obj["issuer"] = "null"
@@ -52,6 +47,21 @@ for account_row in account_rows:
     else:
         account_obj["issuer"] = account_row[9]
         account_obj["thumbnail"] = ''.join(account_row[9].split())
+
+    if account_row[5] == 0:
+        account_obj["type"] = "TOTP"
+        account_obj["period"] = 30
+    elif account_row[5] == 1:
+        account_obj["type"] = "HOTP"
+        account_obj["counter"] = account_row[4]
+    elif account_row[5] == 2: # Battle.net account
+        account_obj["type"] = "TOTP"
+        account_obj["secret"] = base64.b32encode(bytes.fromhex(account_row[3])).decode().upper()
+        account_obj["period"] = 30
+        account_obj["digits"] = 8
+        account_obj["issuer"] = "Battle.net"
+        account_obj["thumbnail"] = "Battlenet"
+        account_obj["label"] = account_row[2]
 
     account_list.append(account_obj)
 

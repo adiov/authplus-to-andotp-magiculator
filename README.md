@@ -40,4 +40,4 @@ Authenticator Plus master password:
 ## Caveats
 - This will decrypt the Authenticator Plus backup database and output the andOTP backup database in decrypted plain-text. Be careful how you handle that.
 - This attempts to preserve the entries' icons/thumbnails by using the `Issuer` field as `thumbnail`, which doesn't have a 100% success rate, but should work most of the time.
-- As far as I can tell, Authenticator Plus doesn't handle checksum algorithms other than SHA-1 or OTP digits other than 6. The output file will use those values by default.
+- As far as I can tell, Authenticator Plus doesn't handle checksum algorithms other than SHA-1 or OTP digits other than 6. The output file will use those values by default. The only exception seems to be Battle.net TOTP with which Authenticator Plus uses 8 digits; this script attempts to preserve this info and pass it to andOTP.
