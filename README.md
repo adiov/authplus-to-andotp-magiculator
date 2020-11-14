@@ -27,8 +27,8 @@ optional arguments:
   -o OUT_FILE, --output-file OUT_FILE
                         Output file name. Defaults to andOTP.json
   -p PASSWORD, --password PASSWORD
-                        Authenticator Plus master password (leave empty if you
-                        wanna type in a prompt instead)
+                        Authenticator Plus master password (don't set if you
+                        wanna type password in a prompt instead)
 ```
 
 Example:
