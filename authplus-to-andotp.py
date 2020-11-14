@@ -13,7 +13,7 @@ ap.add_argument("-d", "--database", dest="db_name",
 ap.add_argument("-o", "--output-file", dest="out_file", default = "andOTP.json",
                     help="Output file name. Defaults to andOTP.json")
 ap.add_argument("-p", "--password", dest="password",
-                    help="Authenticator Plus master password (leave empty if you wanna type in a prompt instead)")
+                    help="Authenticator Plus master password (don't set if you wanna type password in a prompt instead)")
 
 args = ap.parse_args()
 
