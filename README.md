@@ -8,9 +8,7 @@ This converts the Authenticator Plus backup database into andOTP-compatible back
 
 ### With Docker
 
-```
-$ docker build -t authplus-to-andotp-magiculator .
-```
+Install [Docker](https://docs.docker.com/get-docker/).
 
 ### Without Docker
 
@@ -28,9 +26,18 @@ $ sudo python3 setup.py install
 ### With Docker:
 
 ```
-$ docker run -v ${PWD}:/authplus-to-andotp -it authplus-to-andotp-magiculator --database authplus.db
+$ docker run -v ${PWD}:/authplus-to-andotp -it adiov/authplus-to-andotp-magiculator --database authplus.db
 Authenticator Plus master password:
 andotp.json is now ready.
+```
+
+Alternatively, you can also build the image locally.
+
+```
+$ git clone https://github.com/adiov/authplus-to-andotp-magiculator.git
+$ cd authplus-to-andotp-magiculator
+$ docker build -t authplus-to-andotp-magiculator .
+$ docker run -v ${PWD}:/authplus-to-andotp -it authplus-to-andotp-magiculator --database authplus.db
 ```
 
 ### Without Docker:
