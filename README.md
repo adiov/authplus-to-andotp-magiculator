@@ -26,6 +26,8 @@ $ sudo python3 setup.py install
 ### With Docker:
 
 ```
+$ git clone https://github.com/adiov/authplus-to-andotp-magiculator.git
+$ cd authplus-to-andotp-magiculator
 $ docker run -v ${PWD}:/authplus-to-andotp -it adiov/authplus-to-andotp-magiculator --database authplus.db
 Authenticator Plus master password:
 andotp.json is now ready.
