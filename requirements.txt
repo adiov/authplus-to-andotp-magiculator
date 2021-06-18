@@ -1,0 +1,7 @@
+autopep8==1.5.7
+Pillow==8.2.0
+pycodestyle==2.7.0
+pysqlcipher3==1.0.4
+qrcode==6.1
+six==1.16.0
+toml==0.10.2
