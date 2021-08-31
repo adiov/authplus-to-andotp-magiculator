@@ -4,6 +4,8 @@ The [Authenticator Plus app](https://play.google.com/store/apps/details?id=com.m
 
 This converts the Authenticator Plus backup database into andOTP-compatible backup database that can be directly important into andOTP.
 
+Alternatively, you can generate QR codes from your Authenticator Plus backup database which can be scanned and imported by other authenticator apps.
+
 # Installation
 
 ### With Docker
@@ -49,6 +51,16 @@ $ ./authplus-to-andotp.py --database authplus.db
 Authenticator Plus master password:
 andotp.json is now ready.
 ```
+
+### Generating QR codes:
+
+If you want to transfer your codes to a different authenticator app, you can generate QR codes with the `authplus-to-qr-codes.py` script, for example:
+
+```
+$ ./authplus-to-qr-codes.py --database path/to/authplus.db authplus.db --password yourpassword
+```
+
+The generated QR codes will be displayed in the terminal as well as saved in an `output` directory. You can open the `output/qr_codes.html` file in your browser to display the codes again.
 
 ## Notes
 
