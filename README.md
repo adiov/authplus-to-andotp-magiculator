@@ -60,6 +60,8 @@ If you want to transfer your codes to a different authenticator app, you can gen
 $ ./authplus-to-qr-codes.py --database path/to/authplus.db authplus.db --password yourpassword
 ```
 
+`authplus-to-qr-codes.py` depends on `qrcode`, which you can install with `pip install qrcode[pil]` or from `requirements.txt` with `pip install -r requirements.txt`.
+
 The generated QR codes will be displayed in the terminal as well as saved in an `output` directory. You can open the `output/qr_codes.html` file in your browser to display the codes again.
 
 ## Notes
