@@ -1,3 +1,7 @@
+_Archive notice:_ This repository is archived because andOTP, while being a great app, was similarly abandoned by its maintainers. This is the reality of unsupported single-contributor open source software; people have their own lives and families and eventually some side projects end up beign de-prioritised. You're welcome to still use andOTP and use this script to help you, but the script no longer needs any future updates.
+
+My advice? Start enabling passkeys wherever you can. For everything else, switch to a paid or a free cross-platform password manager with OTP support.
+
 # Authenticator Plus to andOTP Magiculator
 
 The [Authenticator Plus app](https://play.google.com/store/apps/details?id=com.mufri.authenticatorplus) seems to have been abandoned by the developer. [andOTP](https://github.com/andOTP/andOTP) is a decent, open source, alternative.
